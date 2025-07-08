@@ -2,17 +2,19 @@
 
 const distance = 1
 const priceKm = 0.21
-const price = (priceKm * distance)
+let ticket_price = (priceKm * distance)
 
 console.log(distance)
 console.log(priceKm)
-console.log(price)
+console.log(ticket_price)
 
-const x = prompt('type your age')
-const minorDiscount = x < 18
-const over65Discount = x > 65
+const passenger_age = prompt('type your age')
+const km = prompt('type your km')
 
-console.log(x)
+const minorDiscount = 0.2
+const over65Discount = 0.4
+
+console.log(ticket_price)
 console.log(minorDiscount)
 console.log(over65Discount)
 
@@ -20,30 +22,28 @@ console.log(over65Discount)
 
 
 //richiesta km 
+//richiesta età
 
+//calcolo prezzo standard
 
-//calcolo prezzo
-
-//nessuno sconto 
-
-if (x > minorDiscount && x < over65Discount) {
-
-
-
-}
+ticket_price = km * priceKm
+console.log(ticket_price)
 
 //sconto minorenni -20%
 
+if (passenger_age < 18) {
 
-else if (x < minorDiscount) {
-
-    //sconto over 65
-
-
-}
-else (x > over65Discount){
+    ticket_price -= ticket_price * minorDiscount
+    message = 'prezzo biglietti minorenni'
 
 }
 
+//sconto over65 - 40%%
 
+else (passenger_age > 65){
 
+    ticket_price -= ticket_price * over65Discount
+    message = 'prezzo biglietti over65'
+}
+
+console.log(message, ticket_price.toFixed(2))
