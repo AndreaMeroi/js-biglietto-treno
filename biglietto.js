@@ -18,7 +18,7 @@ console.log(ticket_price)
 console.log(minorDiscount)
 console.log(over65Discount)
 
-
+let message
 
 
 //richiesta km 
@@ -40,10 +40,11 @@ if (passenger_age < 18) {
 
 //sconto over65 - 40%%
 
-else (passenger_age > 65){
+else if (passenger_age > 65) {
 
     ticket_price -= ticket_price * over65Discount
     message = 'prezzo biglietti over65'
 }
 
+// verifica l'errore su message 
 console.log(message, ticket_price.toFixed(2))
